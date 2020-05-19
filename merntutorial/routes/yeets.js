@@ -25,5 +25,11 @@ router.route('/add').post((req, res) =>
         .then(() => res.json('yeet added'))
         .catch(err => res.status(400).json('Error ' + err));
 });
+
+router.route('/:id').delete((req, res) => {
+    Yeet.findByIdAndDelete(req.params.id)
+      .then(() => res.json('Yeet deleted.'))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
     
 module.exports = router;
