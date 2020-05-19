@@ -12,14 +12,12 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect('mongodb+srv://rjvarona:rjvarona@cluster0-rahza.gcp.mongodb.net/test?retryWrites=true&w=majority', { useCreateIndex: true}
-    ).catch(function (reason) {
-        console.log(reason);
-    });
+mongoose.connect('mongodb+srv://rjvarona:Yessir@cluster0-rahza.gcp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true}
+    );
 
 const connection = mongoose.connection;
 
-connection.once('openn', () => {
+connection.once('open', () => {
     console.log("Mongo connected");
 });
 
