@@ -21,8 +21,8 @@ connection.once('open', () => {
     console.log("Mongo connected");
 });
 
-const yeetRouter = require('../routes/yeets.js');
-const userRouter = require('../routes/users.js');
+const yeetRouter = require('../routes/yeets');
+// const userRouter = require('../routes/users.js');
 
 app.use('/yeets', yeetRouter);
 // app.use('/users', userRouter);
