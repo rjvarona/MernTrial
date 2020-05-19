@@ -9,13 +9,13 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) =>
 {
-    const yeet = req.body.yeet;
+    const yeets = req.body.yeets;
     const header = req.body.header;
     const username = req.body.username;
     const date = Date.parse(req.body.date);
     console.log(req.body);
     const newYeet = new Yeet({
-        yeet,
+        yeets,
         header,
         username,
         date,
