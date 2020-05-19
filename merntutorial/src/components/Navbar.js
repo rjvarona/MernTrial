@@ -7,14 +7,17 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-                <Link to="/YeetComponent" className="navbar-brand">Yeets</Link>
+                <Link to="/yeets" className="navbar-brand">Yeets</Link>
                 <div className="collpase navbar-collapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="navbar-item">
-                            <Link to="/YeetComponent" className="nav-link">Yeets</Link>
+                            <Link to="/yeets" className="nav-link">Yeets</Link>
                         </li>
                         <li className="navbar-item">
                             <Link to="/users" className="nav-link">Users</Link>
+                        </li>
+                        <li className="navbar-item">
+                            <Link to="/Create" className="nav-link">Create</Link>
                         </li>
                     </ul>
                 </div>

@@ -7,6 +7,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Users from "./components/UserComponent";
 import YeetPublic from "./components/YeetComponent";
+import CreateYeet from "./components/CreateYeetComponent";
 
 
 
@@ -18,7 +19,8 @@ function App() {
     <Router>
         <Navbar/>
         <br/>
-        <Route path="/" component={YeetPublic}/>
+        <Route path="/yeets" component={YeetPublic}/>
+        <Route path="/create" component={CreateYeet}/>
         <Route path="/users" component={Users}/>
 
     </Router>
