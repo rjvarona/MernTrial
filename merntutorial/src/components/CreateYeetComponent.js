@@ -8,37 +8,25 @@ export default class CreateYeet extends Component{
     constructor(props){
         super(props);
 
-        this.onChangeUsername = this.onChangeUsername.bind(this);
+        
         this.onChangeHeader = this.onChangeHeader.bind(this);
         this.onChangeYeet = this.onChangeYeet.bind(this);
-        this.onChangeDate = this.onChangeDate.bind(this);
+       
         this.onSubmit = this.onSubmit.bind(this);
 
 
         this.state = {
-            username: '',
+           
             header: '',
             yeets: '',
-            date: '',
-            users: [],
+            
         }
     }
 
     componentDidMount() {
-        this.setState({
-            users: ['test', 'yeer'],
-            username: 'test user'
-        })
-    }
+           }
 
 
-    onChangeUsername(e){
-        this.setState({
-            username: e.target.value
-        });
-    }
-
-    
     onChangeHeader(e){
         this.setState({
             header: e.target.value
@@ -51,19 +39,13 @@ export default class CreateYeet extends Component{
         });
     }
 
-    onChangeDate(date){
-        this.setState({
-            date: date
-        });
-    }
 
     onSubmit(e){
         e.preventDefault();
         const yeet = {
-            username: this.state.username,
+            
             header: this.state.header,
             yeets: this.state.yeets,
-            date: this.state.date,
         }
         console.log(yeet);
 
@@ -80,23 +62,7 @@ export default class CreateYeet extends Component{
             <div>
             <h3>Create New Yeet</h3>
             <form onSubmit={this.onSubmit}>
-              <div className="form-group"> 
-                <label>Username: </label>
-                <select
-                    required
-                    className="form-control"
-                    value={this.state.username}
-                    onChange={this.onChangeUsername}>
-                    {
-                      this.state.users.map(function(user) {
-                        return <option 
-                          key={user}
-                          value={user}>{user}
-                          </option>;
-                      })
-                    }
-                </select>
-              </div>
+             
               <div className="form-group"> 
                 <label>Header: </label>
                 <input  type="text"
@@ -115,16 +81,7 @@ export default class CreateYeet extends Component{
                     onChange={this.onChangeYeet}
                     />
               </div>
-              <div className="form-group">
-                <label>Date: </label>
-                <div>
-                  <DatePicker
-                    selected={this.state.date}
-                    onChange={this.onChangeDate}
-                  />
-                </div>
-              </div>
-      
+              
               <div className="form-group">
                 <input type="submit" value="Create Yeet" className="btn btn-primary" />
               </div>
