@@ -22,10 +22,10 @@ connection.once('open', () => {
 });
 
 const yeetRouter = require('../routes/yeets');
-// const userRouter = require('../routes/users.js');
+const coronaRouter = require('../routes/coronavirus');
 
 app.use('/yeets', yeetRouter);
-// app.use('/users', userRouter);
+app.use('/coronavirus', coronaRouter);
 
 
 app.listen(port, () => {

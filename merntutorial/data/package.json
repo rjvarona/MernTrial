@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.15",
+    "node-fetch": "^2.6.0"
   }
 }

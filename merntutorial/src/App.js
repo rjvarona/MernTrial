@@ -20,7 +20,6 @@ function App() {
         <Navbar/>
         <br/>
         <Route path="/" component={YeetPublic}/>
-        <Route path="/create" component={CreateYeet}/>
         <Route path="/users" component={Users}/>
 
     </Router>
