@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 
@@ -7,7 +6,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Users from "./components/UserComponent";
 import YeetPublic from "./components/YeetComponent";
-import CreateYeet from "./components/CreateYeetComponent";
+import Coronavirus from "./components/CoronavirusComponent";
 
 
 
@@ -19,8 +18,9 @@ function App() {
     <Router>
         <Navbar/>
         <br/>
-        <Route path="/" component={YeetPublic}/>
-        <Route path="/users" component={Users}/>
+        <Route path="/" />
+        <Route path="/yeets" component={YeetPublic}/>
+        <Route path="/coronavirus" component={Coronavirus}/>
 
     </Router>
   );

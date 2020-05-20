@@ -35,7 +35,7 @@ const Yeet = props => (
 )
 
 const YeetCard = props => (
-    <div class="col-4">
+    <div className="col-4">
         <Card >
             <CardActionArea>
 
@@ -109,7 +109,7 @@ export default class YeetPublic extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div class="container">
+            <div className="container">
                 <CreateYeet/>
                 <div class="row">
                     {this.yeetCards()}

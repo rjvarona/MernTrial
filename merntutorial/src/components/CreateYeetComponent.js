@@ -68,10 +68,10 @@ export default class CreateYeet extends Component {
 
     render() {
         return (
-            <div class="container">
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
+            <div className="container">
+                <div className="row">
+                    <div className="col-4"></div>
+                    <div className="col-4">
                         <form onSubmit={this.onSubmit}>
 
                             <Card >
