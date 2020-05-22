@@ -23,11 +23,14 @@ connection.once('open', () => {
 
 const yeetRouter = require('../routes/yeets');
 const coronaRouter = require('../routes/coronavirus');
+const userRouter = require('../routes/users');
+
 
 app.use('/yeets', yeetRouter);
 app.use('/coronavirus', coronaRouter);
-
+app.use('/Users', userRouter);
 
 app.listen(port, () => {
     console.log(`server is listening on PORT ${port}`);
 });
+

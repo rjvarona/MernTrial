@@ -1,0 +1,131 @@
+
+import React, { useState } from "react";
+import logo from './logo.svg';
+import './App.css';
+
+debugger
+
+function App() {
+  return (
+    <div className="container" style={{ textAlign: "center" }}>
+      <Board />
+    </div>
+  );
+}
+
+export default App;
+
+
+//create the squares
+function Square(props) {
+  //passing in a value
+  return <button style={{ width: "100px", height: "100px" }} onClick={props.onClick}>{props.value}</button>
+}
+
+
+//board
+function Board() {
+  
+
+  //    value         function           initialize
+  const [boardSquares, setBoardSquares] = useState(Array(9).fill(null));
+
+  //whosNext      funct         initialize to xIsNext
+  const [xIsNext, findWho] = useState(true);
+
+  //when you click on the square??
+  function handleClick(index) {
+
+    //stop board
+    if (determineWinner() != null) return;
+
+    
+    //copy of board state into squares which we will check.
+    const squares = [...boardSquares];
+
+    //check if index of squares is full
+    if (squares[index] != null) { return; }
+
+    //not null add onto the squares
+    if (xIsNext) {
+      squares[index] = "X";
+    }
+    else {
+      squares[index] = "O"
+    }
+
+    //reset the boardSquares
+    setBoardSquares(squares);
+
+    //calculate next turn
+    findWho(!xIsNext);
+
+
+
+  };
+
+  const render = index => {
+    return (
+      <Square value={boardSquares[index]} onClick={() => handleClick(index)} />
+    );
+  };
+
+
+  const determineWinner = () => {
+    let winningVal = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ]
+
+    for (let i = 0; i < winningVal.length; i++) {
+      const a = winningVal[i][0];
+      const b = winningVal[i][1];
+      const c = winningVal[i][2];
+
+      if (boardSquares[a] && boardSquares[a] === boardSquares[b] && boardSquares[b] === boardSquares[c]) {
+        return (
+          <p>winning value is {boardSquares[0]}</p>
+        );
+      }
+    }
+    return null;
+
+
+  }
+
+
+  const status = () => {
+
+    if (xIsNext) {
+      return (
+        <p>X is Playing</p>
+      )
+    }
+    else {
+      return (
+        <p>O is Playing</p>
+      )
+    }
+
+
+  }
+
+  return (
+
+
+    <div>
+
+      <div>{status()}</div>
+      <div>{determineWinner()}</div>
+      <div>{render(0)}{render(1)}{render(2)}</div>
+      <div>{render(3)}{render(4)}{render(5)}</div>
+      <div>{render(6)}{render(7)}{render(8)}</div>
+    </div>
+  );
+}
